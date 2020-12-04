@@ -17,10 +17,11 @@ class Range(FhirBase):
 			self.high = SimpleQuantity(high)
 
 		if block is not None:
+			print(block)
 			if 'low' in block:
-				self.low = SimpleQuantity(block['low'])
+				self.low = SimpleQuantity(block=block['low'])
 			if 'high' in block:
-				self.high = SimpleQuantity(block['high'])
+				self.high = SimpleQuantity(block=block['high'])
 
 	def __eq__(self,  value):
 		"Check to see if this matches the string or another text object"
@@ -33,6 +34,7 @@ class Range(FhirBase):
 				low,high = value.split("-")
 
 				return self.low == low and self.high == high
+			return self.low == value
 
 		if type(value) is Range:
 			if self.high or value.high: 
