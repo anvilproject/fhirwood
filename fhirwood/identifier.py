@@ -55,7 +55,7 @@ class Identifier(FhirBase):
 
         self.add_kv(obj, 'value')
         self.add_kv(obj, 'system')
-        self.add_kv(obj, 'type', 'idtype')
+        self.add_kv(obj, key='type', propname='idtype')
 
         if self.is_list:
             objs = [obj]
