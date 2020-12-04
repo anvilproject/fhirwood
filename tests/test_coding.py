@@ -2,7 +2,7 @@ import pytest
 
 from fhirwood.coding import Coding 
 
-def test_forge_coding_param_init():
+def test_coding_param_init():
 	c1 = Coding(code='A1', system='sys1', display='A1 Something')
 	c2 = Coding(code='A1', system='sys1', display='A1 Some Other')
 	c3 = Coding(code='A2', system='sys1', display='A2 something')
@@ -18,7 +18,7 @@ def test_forge_coding_param_init():
 	assert(obj['code'] == 'A1')
 	assert(obj['system'] == 'sys1')
 
-def test_forge_coding_param_init_as_array():
+def test_coding_param_init_as_array():
 	c1 = Coding(code='A1', system='sys1', display='A1 Something', is_list=True)
 	c2 = Coding(code='A1', system='sys1', display='A1 Some Other')
 	c3 = Coding(code='A2', system='sys1', display='A2 something')
@@ -35,7 +35,7 @@ def test_forge_coding_param_init_as_array():
 	assert(obj[0]['system'] == 'sys1')
 	assert(len(obj) == 1)
 
-def test_forge_coding_block_init():
+def test_coding_block_init():
 	c1 = Coding(block={'code':'A1', 'system':'sys1', 'display':'A1 Something'})
 	c2 = Coding(code='A1', system='sys1', display='A1 Some Other')
 	c3 = Coding(code='A2', system='sys1', display='A2 something')
@@ -51,7 +51,7 @@ def test_forge_coding_block_init():
 	assert(obj['code'] == 'A1')
 	assert(obj['system'] == 'sys1')
 
-def test_forge_coding_block_init_multi():
+def test_coding_block_init_multi():
 	c1 = Coding(block=[
 			{'code':'A1', 'system':'sys1', 'display':'A1 Something'},
 			{'code':'B10', 'system':'sysL', 'display':'Burritos'}

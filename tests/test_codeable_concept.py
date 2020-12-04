@@ -2,7 +2,7 @@ import pytest
 
 from fhirwood.codeable_concept import CodeableConcept 
 
-def test_forge_codeable_concept_param_init():
+def test_codeable_concept_param_init():
 	cc1 = CodeableConcept(text="asdf", coding={"code": "code1"})
 	cc2 = CodeableConcept(text="asdf", coding={"code": "code1"})
 	cc3 = CodeableConcept(text="fdsa", coding={"code": "code2"})

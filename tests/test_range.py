@@ -2,7 +2,7 @@ import pytest
 
 from fhirwood.range import Range 
 
-def test_forge_range_param_init():
+def test_range_param_init():
 	r1 = Range(low=10)
 	r2 = Range(low=10)
 	r3 = Range(low=100)
@@ -30,7 +30,7 @@ def test_forge_range_param_init():
 	assert(obj['high']['value'] == 100)
 
 
-def test_forge_range_block_init():
+def test_range_block_init():
 	r1 = Range(block = {"low": {"value": 10}})
 	r2 = Range(low=10)
 	r3 = Range(low=100)

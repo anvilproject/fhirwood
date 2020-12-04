@@ -2,7 +2,7 @@ import pytest
 
 from fhirwood.identifier import Identifier
 
-def test_forge_identifier_param_init():
+def test_identifier_param_init():
 	id1 = Identifier(value='1234', system='our_system')
 	id2 = Identifier(value='1234', system='our_system')
 	id3 = Identifier(value='1234', system='their_system')
@@ -18,7 +18,7 @@ def test_forge_identifier_param_init():
 	assert(obj['value'] == '1234')
 	assert(obj['system'] == 'our_system')
 
-def test_forge_identifier_block_init():
+def test_identifier_block_init():
 	id1 = Identifier(block={'value':'1234', 'system':'our_system'})
 	id2 = Identifier(value='1234', system='our_system')
 	id3 = Identifier(value='1234', system='their_system')
@@ -34,7 +34,7 @@ def test_forge_identifier_block_init():
 	assert(obj['value'] == '1234')
 	assert(obj['system'] == 'our_system')
 
-def test_forge_identifier_block_array_init():
+def test_identifier_block_array_init():
 	id1 = Identifier(block=[{'value':'12345', 'system':'our_system'}, {'value': '2345', 'system': 'another_system'}])
 	id2 = Identifier(value='12345', system='our_system')
 	id3 = Identifier(value='12345', system='their_system')
