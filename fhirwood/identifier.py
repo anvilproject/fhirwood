@@ -34,6 +34,9 @@ class Identifier(FhirBase):
         self.system = block.get('system')
         self.idtype = block.get('type')
 
+    def get_identifiers(self):
+        return [self.value] + self.alts
+
     def __eq__(self, other):
         does_match = False
 
