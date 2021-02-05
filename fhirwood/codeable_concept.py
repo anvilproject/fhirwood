@@ -17,6 +17,11 @@ class CodeableConcept(FhirBase):
             
             self.text = block.get('text')
 
+    def to_str(self):
+        if self.text:
+            return self.text
+        return self.coding.display
+
     def __eq__(self, cc):
         if self.coding:
             if type(cc) is str:
